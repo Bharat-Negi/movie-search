@@ -32,26 +32,30 @@ const SingleMovie = () => {
   }, [id]);
 
   if (isLoading) {
-    return <div className="text-center text-3xl mt-28">loading ...</div>;
+    return (
+      <div class="flex items-center justify-center h-40">
+        <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   return (
     <>
       <div className="flex items-center justify-center h-screen">
-        <div class="bg-white border border-gray-200 rounded-xl shadow-2xs sm:flex dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-          <div class="shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-60 md:rounded-se-none md:max-w-xs">
+        <div className="bg-white border border-gray-200 rounded-xl shadow-2xs sm:flex dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+          <div className="shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-60 md:rounded-se-none md:max-w-xs">
             <img
-              class="size-full absolute top-0 start-0 object-cover"
+              className="size-full absolute top-0 start-0 object-cover"
               src={movie.Poster}
               alt={movie.Title}
             />
           </div>
-          <div class="flex flex-wrap">
-            <div class="p-4 flex flex-col h-full sm:p-7 relative">
-              <h3 class="text-lg font-bold text-gray-800 dark:text-white">
+          <div className="flex flex-wrap">
+            <div className="p-4 flex flex-col h-full sm:p-7 relative">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-white">
                 {movie.Title}
               </h3>
-              <p class="mt-1 text-gray-500 dark:text-neutral-400">
+              <p className="mt-1 text-gray-500 dark:text-neutral-400">
                 {movie.Plot}
               </p>
               <NavLink
